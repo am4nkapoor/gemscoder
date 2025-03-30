@@ -5,8 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaCode, FaCloud, FaMobile, FaRocket, FaCheck } from "react-icons/fa6";
 import {
-  SiMicrosoft,
-  SiIbm,
+  SiMeta,
+  SiLinkedin,
   SiAmazon,
   SiGoogle,
   SiTypescript,
@@ -333,13 +333,13 @@ export default function Home() {
               whileHover={{ scale: 1.1 }}
               className="col-span-1 flex justify-center"
             >
-              {/* <SiMicrosoft className="h-12 w-auto text-gray-500" /> */}
+              <SiMeta className="h-12 w-auto text-gray-500" />
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.1 }}
               className="col-span-1 flex justify-center"
             >
-              {/* <SiIbm className="h-12 w-auto text-gray-500" /> */}
+              <SiLinkedin className="h-12 w-auto text-gray-500" />
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.1 }}
