@@ -1,0 +1,8 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- HTML Tag -->
+  <path d="M50 100L30 150L50 200M100 100L120 150L100 200" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Brackets -->
+  <path d="M150 80L170 150L150 220" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Code Symbol -->
+  <path d="M200 120V180M220 120V180M240 120V180" stroke="white" stroke-width="4" stroke-linecap="round"/>
+</svg> 
