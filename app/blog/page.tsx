@@ -1,5 +1,5 @@
 import { client } from "@/sanity/lib/client";
-// import { urlForImage } from '@/sanity/lib/image';
+import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,10 +14,12 @@ async function getPosts() {
       excerpt,
       author->{
         name,
-        image
+        image,
+        bio
       },
       categories[]->{
-        title
+        title,
+        description
       }
     }`
   );
@@ -46,13 +48,13 @@ export default async function BlogPage() {
             >
               {post.mainImage && (
                 <div className="relative w-full">
-                  {/* <Image
+                  <Image
                     src={urlForImage(post.mainImage).url()}
                     alt={post.title}
                     width={400}
                     height={300}
                     className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-                  /> */}
+                  />
                 </div>
               )}
               <div className="max-w-xl">
@@ -82,7 +84,7 @@ export default async function BlogPage() {
                 </div>
                 {post.author && (
                   <div className="relative mt-8 flex items-center gap-x-4">
-                    {/* {post.author.image && (
+                    {post.author.image && (
                       <Image
                         src={urlForImage(post.author.image).url()}
                         alt={post.author.name}
@@ -90,7 +92,7 @@ export default async function BlogPage() {
                         height={40}
                         className="h-10 w-10 rounded-full bg-gray-100"
                       />
-                    )} */}
+                    )}
                     <div className="text-sm leading-6">
                       <p className="font-semibold text-gray-900">
                         {post.author.name}
