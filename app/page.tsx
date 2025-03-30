@@ -3,8 +3,20 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { FaCode, FaCloud, FaMobile, FaRocket } from "react-icons/fa6";
-import { SiMicrosoft, SiIbm, SiAmazon, SiGoogle } from "react-icons/si";
+import { FaCode, FaCloud, FaMobile, FaRocket, FaCheck } from "react-icons/fa6";
+import {
+  SiMicrosoft,
+  SiIbm,
+  SiAmazon,
+  SiGoogle,
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiVercel,
+} from "react-icons/si";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 const features = [
   {
@@ -69,6 +81,80 @@ const portfolioItems = [
       "An integrated healthcare platform streamlining patient care and administrative processes.",
     image: "/portfolio2.svg",
   },
+];
+
+const whyChooseUs = [
+  {
+    title: "Expert Team",
+    description:
+      "Our team consists of experienced developers, designers, and architects with proven track records.",
+    icon: FaCheck,
+  },
+  {
+    title: "Modern Technologies",
+    description:
+      "We use cutting-edge technologies and follow best practices to deliver scalable solutions.",
+    icon: FaCheck,
+  },
+  {
+    title: "Agile Development",
+    description:
+      "Our agile approach ensures quick iterations and continuous improvement throughout the project.",
+    icon: FaCheck,
+  },
+  {
+    title: "24/7 Support",
+    description:
+      "We provide round-the-clock support to ensure your systems run smoothly at all times.",
+    icon: FaCheck,
+  },
+];
+
+const technologies = [
+  { name: "TypeScript", icon: SiTypescript, color: "text-blue-600" },
+  { name: "React", icon: SiReact, color: "text-cyan-500" },
+  { name: "Next.js", icon: SiNextdotjs, color: "text-black" },
+  { name: "Tailwind", icon: SiTailwindcss, color: "text-sky-500" },
+  { name: "Node.js", icon: SiNodedotjs, color: "text-green-600" },
+  { name: "Vercel", icon: SiVercel, color: "text-gray-900" },
+];
+
+// Add new sections data
+const services = [
+  {
+    title: "Software Development & Support",
+    description:
+      "Building and Maintaining Software Solutions for seamless Business productivity.",
+    icon: FaCode,
+    link: "/services/development",
+  },
+  {
+    title: "Advanced Software Consulting",
+    description: "Expert assistance for your software needs & requirements.",
+    icon: FaCloud,
+    link: "/services/consulting",
+  },
+  {
+    title: "ERP Solutions",
+    description:
+      "Transform the core of your organization digitally for better productivity.",
+    icon: FaRocket,
+    link: "/services/erp",
+  },
+  {
+    title: "Mobile Development",
+    description:
+      "Native and cross-platform mobile applications for modern businesses.",
+    icon: FaMobile,
+    link: "/services/mobile",
+  },
+];
+
+const achievements = [
+  { id: 1, value: "400+", label: "Expert Employees" },
+  { id: 2, value: "3500+", label: "Projects Delivered" },
+  { id: 3, value: "1500+", label: "Satisfied Clients" },
+  { id: 4, value: "25+", label: "Years Experience" },
 ];
 
 export default function Home() {
@@ -151,9 +237,10 @@ export default function Home() {
             <div className="mt-10 flex items-center gap-x-6">
               <Link
                 href="/contact"
-                className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-blue-600 shadow-sm hover:bg-gray-100 transition-colors duration-300"
+                className="inline-flex items-center px-6 py-3 text-base font-medium transition-all duration-300 bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               >
-                Start Your Project
+                Get in Touch
+                <ArrowRightIcon className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 href="/portfolio"
@@ -431,6 +518,171 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Why Choose Us Section */}
+      <div className="py-24 sm:py-32 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-base font-semibold leading-7 text-blue-600">
+              Why Choose Us
+            </h2>
+            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Building Excellence Through Experience
+            </p>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              We combine technical expertise with industry best practices to
+              deliver outstanding results
+            </p>
+          </div>
+          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-4">
+              {whyChooseUs.map((item) => (
+                <motion.div
+                  key={item.title}
+                  className="flex flex-col items-start"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div className="rounded-lg bg-white p-2 ring-1 ring-gray-200">
+                    <item.icon className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <dt className="mt-4 font-semibold text-gray-900">
+                    {item.title}
+                  </dt>
+                  <dd className="mt-2 leading-7 text-gray-600">
+                    {item.description}
+                  </dd>
+                </motion.div>
+              ))}
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      {/* Services Showcase Section */}
+      <div className="py-24 bg-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-base font-semibold leading-7 text-blue-600">
+              Our Services
+            </h2>
+            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Unleash your Business Productivity
+            </p>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              We deliver personalized technology solutions to connect all
+              technical gaps
+            </p>
+          </div>
+          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:mt-20 lg:max-w-none lg:grid-cols-4">
+            {services.map((service) => (
+              <motion.div
+                key={service.title}
+                className="flex flex-col bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <div className="p-8">
+                  <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-blue-600/10">
+                    <service.icon className="h-8 w-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {service.title}
+                  </h3>
+                  <p className="mt-4 text-base text-gray-600">
+                    {service.description}
+                  </p>
+                </div>
+                <div className="mt-auto p-6 bg-gray-50">
+                  <Link
+                    href={service.link}
+                    className="text-sm font-medium text-blue-600 hover:text-blue-500 flex items-center"
+                  >
+                    Learn more
+                    <ArrowRightIcon className="ml-2 h-4 w-4" />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Achievements Section */}
+      <div className="bg-gradient-to-r from-blue-600 to-blue-800 py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              Empowering Business Ecosystems with Digital Transformation
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-gray-300">
+              For over 25 years, we've been transforming businesses through
+              technology, not just as a service provider, but as a trusted
+              innovation partner.
+            </p>
+          </div>
+          <motion.div
+            className="mx-auto mt-16 grid max-w-2xl grid-cols-2 gap-8 text-center lg:max-w-none lg:grid-cols-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            {achievements.map((achievement) => (
+              <div
+                key={achievement.id}
+                className="mx-auto flex max-w-xs flex-col gap-y-4"
+              >
+                <dt className="text-base leading-7 text-gray-300">
+                  {achievement.label}
+                </dt>
+                <dd className="order-first text-3xl font-semibold tracking-tight text-white">
+                  {achievement.value}
+                </dd>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Technologies Section */}
+      <div className="py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-base font-semibold leading-7 text-blue-600">
+              Latest Technologies
+            </h2>
+            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Built with Modern Stack
+            </p>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              We use the latest and most efficient technologies to build
+              scalable and maintainable solutions
+            </p>
+          </div>
+          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+            <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
+              {technologies.map((tech) => (
+                <motion.div
+                  key={tech.name}
+                  className="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-sm ring-1 ring-gray-200 hover:shadow-md transition-shadow duration-300"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <tech.icon className={`h-12 w-12 ${tech.color}`} />
+                  <span className="mt-4 text-sm font-medium text-gray-900">
+                    {tech.name}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* CTA section */}
       <div className="relative isolate mt-32 px-6 py-32 sm:mt-56 sm:py-40 lg:px-8">
         <svg
@@ -478,7 +730,7 @@ export default function Home() {
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
                 href="/contact"
-                className="rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                className="inline-flex items-center px-6 py-3 text-base font-medium transition-all duration-300 bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               >
                 Contact Us
               </Link>

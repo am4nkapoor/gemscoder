@@ -104,6 +104,25 @@ export default async function BlogPage() {
             </article>
           ))}
         </div>
+        <button
+          //onClick={handleLoadMore}
+          className="mt-12 mx-auto block inline-flex items-center px-6 py-3 text-base font-medium transition-all duration-300 bg-gradient-to-r from-gray-50 to-gray-100 text-gray-700 hover:from-gray-100 hover:to-gray-200 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+        >
+          <span>Load More Posts</span>
+          <svg
+            className="ml-2 h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   );
